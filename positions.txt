@@ -1,0 +1,7 @@
+ 
+Left motor: 261, 448
+Right motor: 394, 445
+
+Left joint: 165, 227
+
+Linkage length: sqrt((261-165)^2 + (448-227)^2) = 241 pixels
