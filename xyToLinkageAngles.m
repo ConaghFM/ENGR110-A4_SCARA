@@ -7,11 +7,11 @@ Ym1 = 448;
 
 %Direct Kinematics:
 Xc = ((Xt-Xm1));
-Yc = ((Yt-Ym1)/2 + Ym1);
+Yc = ((Yt-Ym1)/2.00 + Ym1);
 
     %Adjacent
 AbC = sqrt((Xt-Xm1)^2 + (Yt-Ym1)^2)
-AbC = AbC/2.0
+AbC = AbC/2.00
 if (AbC > R)
     % singularity()
 end
