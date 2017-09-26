@@ -8,7 +8,7 @@ Ym2 = 445;
 Xc = (Xm2-Xt)/2+Xt
 Yc = (Ym2-Yt)/2+Yt
 AbC = sqrt((Xm2-Xt)^2+(Ym2-Yt)^2)
-AbC = AbC/2
+AbC = AbC/2.00
 %if (AbC > R) %singularity
 %    return;
 %end
