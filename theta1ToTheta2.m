@@ -2,8 +2,8 @@ function theta2 = theta1ToTheta2(theta1, Xt, Yt)
 
 %Constants:
 R = 
-Xm2
-Ym2
+Xm2 =
+Ym2 =
 
 Xc = (Xm2-Xt)/2+Xt;
 Yc = (Ym2-Yt)/2+Yt;
