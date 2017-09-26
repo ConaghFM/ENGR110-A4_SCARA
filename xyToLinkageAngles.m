@@ -1,31 +1,32 @@
 function [theta1, theta2] = xyToLinkageAngles(Xt, Yt)
 
 %Constants:
-R =
-Xm1 =
-Ym1 =
+R = 241;
+Xm1 = 261;
+Ym1 = 448;
 
 %Direct Kinematics:
 Xc = ((Xt-Xm1));
+Yc = ((Yt-Ym1)/2 + Ym1);
 
     %Adjacent
-int AbC = (sqrt(Xt-Xm1)^2 + (Yt-Ym1)^2)/2.00;
+AbC = sqrt((Xt-Xm1)^2 + (Yt-Ym1)^2)
+AbC = AbC/2.0
 if (AbC > R)
-    singularity()
+    % singularity()
 end
 
     %Opposite
-n = sqrt(AbC^2 - R^2);
+n = sqrt(R^2 - AbC^2);
 
-thetaB = arcsin(n, R);
-thetaA = arcsin((Yx-Ym1)/(Xc-Ym1));   %assumes px are counted from top of frame
+thetaB = asin(n/R);
+thetaA = asin((Yc-Ym1)/(Xc-Xm1));   %assumes px are counted from top of frame
 
-if (invertedL)
+if (0) %to be fixed
     theta1 = thetaA - thetaB;
 else theta1 = thetaA + thetaB;
 end
 
 %Inverse Kinematics:
-theta2 = theta1ToTheta2(theta1, Xt, Yt);
-
-return [theta1, theta2]
+theta2 = theta1ToTheta2(Xt, Yt);
+end

@@ -1,28 +1,38 @@
-function theta2 = theta1ToTheta2(theta1, Xt, Yt)
+function theta2 = theta1ToTheta2(Xt, Yt)
 
 %Constants:
-R = 
-Xm2 =
-Ym2 =
+R = 241;
+Xm2 = 394;
+Ym2 = 445;
 
-Xc = (Xm2-Xt)/2+Xt;
-Yc = (Ym2-Yt)/2+Yt;
-AbC = (sqrt(Xm2-Xt)^2+(Ym2-Yt)^2)/2;
-if (AbC > R) %singularity
-    return;
+Xc = (Xm2-Xt)/2+Xt
+Yc = (Ym2-Yt)/2+Yt
+AbC = sqrt((Xm2-Xt)^2+(Ym2-Yt)^2)
+AbC = AbC/2
+%if (AbC > R) %singularity
+%    return;
+%end
+
+value1 = Xm2-Xt
+
+if (value1 == 0)
+    value1 = 1
 end
 
-n = sqrt(R^2-AbC^2);
-beta = arctan((Ym2-Yt)/(Xm2-Xt));
+n = sqrt(R^2 - AbC^2)
+beta = atan((Ym2-Yt)/value1)
 
-if (invertedR)
-    Xj = Xc - n * Cos((Pi/2.00)-beta);
-    Yj = Yc - n * Sin((Pi/2.00)-beta);
+if (0)
+    Xj = Xc - n * cos((pi/2.00)-beta);
+    Yj = Yc - n * sin((pi/2.00)-beta);
 else 
-    Xj = Xc + n * Cos((Pi/2.00)-beta);
-    Yj = Yc + n * Sin((Pi/2.00)-beta);
+    Xj = Xc + n * cos((pi/2.00)-beta);
+    Yj = Yc + n * sin((pi/2.00)-beta);
 end
 
-theta2 = arctan2((Xj-Xm2), (Yj-Ym2));
+arg1 = Xj-Xm2
+arg2 = Yj-Ym2
 
-return theta2;
+theta2 = atan2(arg1,arg2);
+
+
