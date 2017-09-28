@@ -28,5 +28,5 @@ else theta1 = thetaA + thetaB;
 end
 
 %Inverse Kinematics:
-theta2 = theta1ToTheta2(Xt, Yt);
+theta2 = getTheta2(Xt, Yt);
 end
