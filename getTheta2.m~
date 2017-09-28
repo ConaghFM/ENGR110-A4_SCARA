@@ -26,11 +26,11 @@ if (value1 == 0)
 end
 
 beta = atan((Ym2-Yt)/value1)
-delta = acos(AbC/R)
-theta2 = (pi/2.0)+beta-delta
 
-%arg1 = Xj-Xm2
-%arg2 = Yj-Ym2
+theta2 = 
+
+arg1 = Xj-Xm2
+arg2 = Yj-Ym2
 
 %theta2 = atan2(arg1,arg2);
 

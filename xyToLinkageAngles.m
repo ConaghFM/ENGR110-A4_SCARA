@@ -24,9 +24,9 @@ thetaA = asin((Yc-Ym1)/(Xc-Xm1));   %assumes px are counted from top of frame
 
 if (0) %to be fixed
     theta1 = thetaA - thetaB;
-else theta1 = thetaA + thetaB;
+else theta1 = radtodeg(thetaA + thetaB);
 end
 
 %Inverse Kinematics:
-theta2 = getTheta2(Xt, Yt);
+theta2 = radtodeg(getTheta2(Xt, Yt));
 end
