@@ -1,4 +1,4 @@
-function theta2 = theta1ToTheta2(Xt, Yt)
+function theta2 = getTheta2(Xt, Yt)
 
 %Constants:
 R = 241;
