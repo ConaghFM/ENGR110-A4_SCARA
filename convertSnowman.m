@@ -7,8 +7,9 @@ bwe = edge(bw,'Canny');
 [rows, cols] = size(bwe);
 
 count = 0;
-currentRow = 1;
-currentCol = 1;
+% start drawing image at 100,100
+currentRow = 100;
+currentCol = 100;
 targetRow = 1;
 targetCol = 1;
 
@@ -73,8 +74,8 @@ while 1
             out(count,2) = out(count-1,2);
             out(count,3) = 1200;
             %return to start of image
-            currentRow = 1;
-            currentCol = 1;
+            currentRow = 100;
+            currentCol = 100;
         end
         
     else
