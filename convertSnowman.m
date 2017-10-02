@@ -8,8 +8,10 @@ bwe = edge(bw,'Canny');
 
 count = 0;
 % start drawing image at 100,100
-currentRow = 100;
-currentCol = 100;
+offset = 100;
+
+currentRow = 1;
+currentCol = 1;
 targetRow = 1;
 targetCol = 1;
 
@@ -32,7 +34,7 @@ while 1
         count = count + 1;
         targetRow = currentRow;
         targetCol = currentCol;
-        [theta1, theta2] = xyToLinkageAngles(targetRow, targetCol);
+        [theta1, theta2] = xyToLinkageAngles(targetRow+offset, targetCol+offset);
         [v1,v2] = a2pwm(theta1,theta2);
         out(count,1) = v1;
         out(count,2) = v2;
@@ -74,8 +76,8 @@ while 1
             out(count,2) = out(count-1,2);
             out(count,3) = 1200;
             %return to start of image
-            currentRow = 100;
-            currentCol = 100;
+            currentRow = 1;
+            currentCol = 1;
         end
         
     else
