@@ -1,0 +1,22 @@
+image = imread('filename.tif'); % load image (filename needs to be changed)
+image_greyscale = rgb2gray(image) % make image grayscale
+image_adapthisteq = adapthisteq(image); %increase contrast of image
+
+[cols,rows] = size(image); %find the x and y dimensions of the image
+threshold = 120;
+
+%converts any pixel with a grayscale value less than or equal to 
+%the threhold to 255 (white), or 0 (black) if it is greater than the 
+%threshold.
+
+for (col = 0; col < cols; col ++){
+	for (row = 0; row < rows; row ++){
+		%find the grayscale value at a given pixel
+		pixel = impixel(image_greyscale,col,row);	
+		if (pixel <= thershold)
+			pixel = 255;
+		else
+			pixel = 0;
+
+	}
+}
