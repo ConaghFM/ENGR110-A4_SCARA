@@ -6,7 +6,7 @@ function [motor1, motor2] = a2pwm(theta1, theta2)
 %motor2 = (theta2 - 1.7*10^2)/ -0.08
 %motor1 = (-10 * theta2 + 2*10^3)
 
-motor1 = round(-10 * (theta1 - 250));
-motor2 = round(-10 * (theta2 - 220));
+motor1 = round(-10 * (theta1 - 264));
+motor2 = round(-10 * (theta2 - 204));
 
 end
