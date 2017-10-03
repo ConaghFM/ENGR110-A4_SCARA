@@ -1,26 +1,26 @@
-x0 = 80; y0 = 80.1; x1 = 80.1; y1 = 157; x2 = 157; y2 = 157.1; x3 = 157.1; y3 = 80;
+x0 = 85; x1 = 162; x2 = 162.1; x3 = 85.1;
+y0 = 85; y1 = 85.1; y2 = 162; y3 = 162.1;
 
-dplus = (y1-y0)/10;
-dminus = (y0-y1)/10;
+N = 50; % number of points line is made from
+dxa = (x1-x0)/N; % x increment
+dxb = (x2-x1)/N;
+dxc = (x3-x2)/N;
+dxd = (x0-x3)/N;
+dya = (y1-y0)/N; % y increment
+dyb = (y2-y1)/N;
+dyc = (y3-y2)/N;
+dyd = (y0-y3)/N;
 
-dsmall = (x1-x0)/10;
-
-xA = x0:dsmall:x1;
-yA = y0:dplus:y1;
-
-xB = x1:dplus:x2;
-yB = y1:dsmall:y2;
-
-xC = x2:dsmall:x3;
-yC = y2:dminus:y3;
-
-xD = x3:dminus:x0;
-yD = y3:dsmall:y0;
-
-x = horzcat(xA(1:10), xB(1:10), xC(1:10), xD(1:10));
-y = horzcat(yA(1:10), yB(1:10), yC(1:10), yD(1:10));
-
-plot(x,y);
+xa = x0:dxa:x1;
+xb = x1:dxb:x2;
+xc = x2:dxc:x3;
+xd = x3:dxd:x0;
+ya = y0:dya:y1;
+yb = y1:dyb:y2;
+yc = y2:dyc:y3;
+yd = y3:dyd:y0;
+x = cat(2,xa,xb,xc,xd);
+y = cat(2,ya,yb,yc,yd);
 
 [theta1, theta2] = xyToLinkageAngles(x,y);
 [v1,v2] = a2pwm(theta1,theta2);
