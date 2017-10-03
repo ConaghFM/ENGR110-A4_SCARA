@@ -14,7 +14,7 @@ AbC = sqrt((Xt-Xm1).^2 + (Yt-Ym1).^2);
 AbC = AbC/2.00;
 if (AbC > R)
     AbC = R;
-    disp("T out of bounds");
+    disp(T out of bounds);
 end
 
     %Opposite
