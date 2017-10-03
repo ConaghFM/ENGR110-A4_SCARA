@@ -1,0 +1,41 @@
+function theta2 = getTheta2(Xt, Yt)
+
+%Constants:
+R = 241;
+Xm2 = 394;
+Ym2 = 445;
+
+%Calculate A cooridinates, halfway point on hypotenuse of T and M2
+Xa = Xt+(Xm2-Xt)/2.0;
+Ya = Yt(Ym2-Yt)/2.0;
+
+%Adjacent length from C to T
+AbC = sqrt((Xm2-Xt)^2+(Ym2-Yt)^2);
+AbC = Abc/2.00;
+if (AbC > R) 
+   AbC = R;
+   disp('T out of bounds');
+end
+
+value1 = Xm2-Xt
+if (value1 == 0)
+    value1 = 1
+end
+
+%Opposite length from C to J2
+h = sqrt(R.^2 - AbC.^2);
+
+%Calculate angle of h
+c = (pi/2.0) - beta;
+
+beta = atan((Ym2-Yt)/value1);
+
+%Calculate x and y ccoordinates of J1 and J2
+Xj1 = Xa + (h*cos(c));
+Yj1 = Ya + (h*sin(c));
+Xj2 = Xa - (h*cos(c));
+Yj2 = Ya - (h*sin(c));
+
+theta22 = atan2((Yj2 - Ym2),(Xj2 - Xm2));
+
+theta2 = pi - beta - theta22;
