@@ -33,9 +33,6 @@ Yj1 = Ya + (h*sin(c));
 Xj2 = Xa - (h*cos(c));
 Yj2 = Ya - (h*sin(c));
 
-theta21 = atan2((Yj1 - Ym2),(Xj1 - Xm2)); 
-theta22 = atan2((Yj2 - Ym2),(Xj2 - Xm2));
-
-theta2 = theta21;
+theta2 = atan2((Yj1 - Ym2),(Xj1 - Xm2)); 
 
 
